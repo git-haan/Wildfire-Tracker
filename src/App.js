@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import World from './components/World';
 
 function App() {
+  const [eventData, setEventData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://eonet.gsfc.nasa.gov/api/v3/events');
+        const { events } = await response.json();
+        setEventData(events);
+        // console.log('Event Data:', events);
+      } catch (error) {
+        console.error('Error fetching event data:', error);
+      }
+    };
+    
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <World eventData={eventData} />
   );
 }
 
