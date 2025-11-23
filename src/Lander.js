@@ -12,7 +12,7 @@ const Lander = () => {
       <div className="lander-card">
         <h1 className="lander-title">Wildfire Tracker</h1>
         <p className="lander-sub">Visualize recent wildfires on an interactive map</p>
-        <button className="lander-cta" onClick={goToApp}>Open App</button>
+        <button className="lander-cta" onClick={goToApp}>Open Map</button>
       </div>
     </div>
   );

@@ -30,14 +30,13 @@ const World = ({
             }];
         });
 
-
     return (
-        <div style={{ height: '100vh', width: '100%' }}>
-            <APIProvider apiKey='AIzaSyD0gNBmi9lvkLDCgaMe7RE6Em2QFwjpKGI'>
+        <div style={{ height: '100vh', width: '100%', position: 'relative' }}>
+            <APIProvider apiKey='GOOGLE_MAPS_API_KEY'>
                 <Map
                     defaultZoom={ zoom }
                     defaultCenter={ center }
-                    mapId={'3f89f24ff80819c63cc700e0'}
+                    mapId={'GOOGLE_MAPS_MAP_ID'}
                 >
                     {wildfireMarkers.map(fire => (
                         <AdvancedMarker 
@@ -51,6 +50,13 @@ const World = ({
                     ))}
                 </Map>
             </APIProvider>
+
+            <button
+                onClick={() => { window.location.hash = '#/'; }}
+                className='button'
+            >
+                <span style={{ fontSize: 16, lineHeight: 1 }}>&larr;</span>
+            </button>
         </div>
     )
 }
