@@ -32,11 +32,11 @@ const World = ({
 
     return (
         <div style={{ height: '100vh', width: '100%', position: 'relative' }}>
-            <APIProvider apiKey='GOOGLE_MAPS_API_KEY'>
+            <APIProvider apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
                 <Map
                     defaultZoom={ zoom }
                     defaultCenter={ center }
-                    mapId={'GOOGLE_MAPS_MAP_ID'}
+                    mapId={process.env.REACT_APP_GOOGLE_MAP_ID}
                 >
                     {wildfireMarkers.map(fire => (
                         <AdvancedMarker 
