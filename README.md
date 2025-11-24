@@ -1,6 +1,8 @@
 # Wildfire Tracker
 
-A small React app that visualizes recent wildfire events on a Google Map using NASA's EONET API and `@vis.gl/react-google-maps`.
+A React Application that visualizes recent wildfire events on a Google Map using NASA's EONET API and `@vis.gl/react-google-maps`.
+
+![Map](wildfire.png)
 
 **Quick overview**
 - Landing page (`/`) with an Open button that navigates to the app.
